@@ -1,0 +1,27 @@
+{
+  "name": "carrent",
+  "version": "1.0.0",
+  "description": "Cypress with Cucumber for Car Rent test cases",
+  "main": "index.js",
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run"
+  },
+  "keywords": [
+    "Cypress",
+    "BDD",
+    "Cucumber"
+  ],
+  "author": "Maciej Stafijowski",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^8.7.0",
+    "cypress-cucumber-preprocessor": "^4.3.0",
+    "cypress-webpack-preprocessor-v5": "^5.0.0-alpha.1",
+    "prettier": "^2.4.1"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "step_definitions": "cypress/integration/"
+  }
+}
