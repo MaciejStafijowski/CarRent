@@ -3,5 +3,6 @@
   "defaultCommandTimeout": 5000,
   "pageLoadTimeout": 10000,
   "ignoreTestFiles": ["*.js", "*.md"],
-  "testFiles": "**/*.feature"
+  "testFiles": "**/*.feature",
+  "baseUrl": "http://qalab.pl.tivixlabs.com/"
 }

@@ -1,22 +1,24 @@
 import { Given, When, Then, And } from 'cypress-cucumber-preprocessor/steps';
 
-const url = 'http://qalab.pl.tivixlabs.com/'
+let future_pick_up = cy.dayjs().add(1, 'day').format('YYYY-MM-DD')
+let future_drop_off = cy.dayjs().add(8, 'day').format('YYYY-MM-DD')
 
 describe('Searching for a car for rent', ()=> {
 
   Given('user is on search page', () => {
-    cy.visit(url)
+    cy.visit('/')
   });
 
   When('he fills the search data', () => {
+
     cy.get('#country').select('1')
     cy.get('#country').should('have.value', '1')
     cy.get('#city').select('1')
     cy.get('#city').should('have.value', '1')
-    cy.get('#pickup').type('2021-11-20')
-    cy.get('#pickup').should('have.value', '2021-11-20')
-    cy.get('#dropoff').type('2021-11-22')
-    cy.get('#dropoff').should('have.value', '2021-11-22')
+    cy.get('#pickup').type(future_pick_up)
+    cy.get('#pickup').should('have.value', future_pick_up)
+    cy.get('#dropoff').type(future_drop_off)
+    cy.get('#dropoff').should('have.value', future_drop_off)
   });
 
   And('he use search', ()=> {
@@ -28,19 +30,19 @@ describe('Searching for a car for rent', ()=> {
   });
 
   Then('no search results are displayed', ()=> {
-    cy.get('#search-results').should('not.be.visible')
+    cy.get('#search-results').should('not.exist')
   });
 
   Given('user has searched for a car', ()=> {
-    cy.visit(url)
+    cy.visit('/')
     cy.get('#country').select('1')
     cy.get('#country').should('have.value', '1')
     cy.get('#city').select('1')
     cy.get('#city').should('have.value', '1')
-    cy.get('#pickup').type('2021-11-20')
-    cy.get('#pickup').should('have.value', '2021-11-20')
-    cy.get('#dropoff').type('2021-11-22')
-    cy.get('#dropoff').should('have.value', '2021-11-22')
+    cy.get('#pickup').type(future_pick_up)
+    cy.get('#pickup').should('have.value', future_pick_up)
+    cy.get('#dropoff').type(future_drop_off)
+    cy.get('#dropoff').should('have.value', future_drop_off)
     cy.get('.btn').should('contain', 'Search').click()
   });
 
