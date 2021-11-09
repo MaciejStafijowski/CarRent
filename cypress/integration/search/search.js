@@ -10,7 +10,6 @@ describe('Searching for a car for rent', ()=> {
   });
 
   When('he fills the search data', () => {
-
     cy.get('#country').select('1')
     cy.get('#country').should('have.value', '1')
     cy.get('#city').select('1')
@@ -59,5 +58,4 @@ describe('Searching for a car for rent', ()=> {
     cy.get('.card-text').should('contain', 'Location: Poland, Wroclaw')
     cy.get('.card-text').should('contain', 'License plate: 9W 3J3KBI')
   });
-
 });
