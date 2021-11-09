@@ -20,18 +20,18 @@ Feature: Search car for rent
 
 #    The part of test cases below is not automated
 
-  Scenario: User is able to provide personal data in the rent form
-    Given user as chosen a car
-    When he provides personal data
-    Then user rents car
-
-  Scenario Outline: User is not able to search for city from different country
-    Given user is on search page
-    When he search for <city> in <country>
-    Then then search thows error
-
-    Examples:
-      |city |country |
-      |Berlin |France |
-      |Paris  |Poland |
-      |Wroclaw |Germany |
+#  Scenario: User is able to provide personal data in the rent form
+#    Given user as chosen a car
+#    When he provides personal data
+#    Then user rents car
+#
+#  Scenario Outline: User is not able to search for city from different country
+#    Given user is on search page
+#    When he search for <city> in <country>
+#    Then then search thows error
+#
+#    Examples:
+#      |city |country |
+#      |Berlin |France |
+#      |Paris  |Poland |
+#      |Wroclaw |Germany |
